@@ -4,6 +4,7 @@ import travelPlansData from '../../src/data/travel-plans.json'
 function TravelList() {
 
   const [ travelPlans, setTravelPlans ] = useState(travelPlansData)
+  // setTravelPlans not used, though useState is added following the exercise requirements
 
   return (
     <div className="travel-list">
