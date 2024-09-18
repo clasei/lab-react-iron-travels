@@ -22,13 +22,16 @@ function TravelList() {
               <>
                 Price: €{eachTravel.totalCost}
               </>
-              <br></br>
-              <>
-                {eachTravel.totalCost <= 350 && <span className="tag great-deal">Great Deal</span>}
-                {eachTravel.totalCost >= 1500 && <span className="tag premium">Premium</span>}
-                {eachTravel.allInclusive && <span className="tag all-inclusive">All-Inclusive</span>}
-              </>
             </p>
+            
+              <div className="tag-container">
+                
+                  {eachTravel.totalCost <= 350 && <span className="tag great-deal">Great Deal</span>}
+                  {eachTravel.totalCost >= 1500 && <span className="tag premium">Premium</span>}
+                  {eachTravel.allInclusive && <span className="tag all-inclusive">All-Inclusive</span>}
+                
+              </div>
+            
           </div>
 
         </div>
