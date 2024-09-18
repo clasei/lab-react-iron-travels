@@ -18,7 +18,17 @@ function TravelList() {
           <div className="travel-info">
             <h3>{eachTravel.destination} ({eachTravel.days} Days)</h3>
             <p>{eachTravel.description}</p>
-            <p>Price: €{eachTravel.price}</p>
+            <p>
+              <>
+                Price: €{eachTravel.totalCost}
+              </>
+              <br></br>
+              <>
+                {eachTravel.totalCost <= 350 && <span className="tag great-deal">Great Deal</span>}
+                {eachTravel.totalCost >= 1500 && <span className="tag premium">Premium</span>}
+                {eachTravel.allInclusive && <span className="tag all-inclusive">All-Inclusive</span>}
+              </>
+            </p>
           </div>
 
         </div>
