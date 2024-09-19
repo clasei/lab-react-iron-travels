@@ -35,18 +35,14 @@
   max-width: 1200px;
 }
 
-.travel-list {
-  display: grid;
+.travel-list, .fav-list {
+  /* display: grid; */
   gap: 15px;
   padding: 10px;
 }
 
 .travel-list, .fav-list {
   width: 49%;
-}
-
-.fav-list h2 {
-  padding-top: 25px;
 }
 
 .travel-item {
