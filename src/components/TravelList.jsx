@@ -13,9 +13,9 @@ function TravelList() {
     return originalPlans
   })
 
-  /*
+
   const [ favorites, setFavorites ] = useState([]) // check this empty array !!
-  */
+
 
   // const handleDelete = (id) => {
   //   const updatedTravelPlans = travelPlans.filter(plan => plan.id !== id)
@@ -37,19 +37,35 @@ function TravelList() {
 
 
 
-  /*
-  const addToFavorites = (plan) => {
-    if (!favorites.some(fav => fav.ide === plan.id))
+  const handleFavorites = (plan) => {
+    if (!favorites.some(fav => fav.id === plan.id))
       setFavorites([...favorites, plan])
   }
-  */
+
 
   return (
 
-    <div className="travel-list">
-        {travelPlans.map(plan => (
-          <TravelPlanCard key={plan.id} plan={plan} onDelete={() => handleDelete(plan.id)} />
-        ))}
+    <div className="list-container">
+      <div className="travel-list">
+        <h2>Travels</h2>
+          {travelPlans.map(plan => (
+            <TravelPlanCard 
+              key={plan.id} 
+              plan={plan} 
+              onDelete={() => handleDelete(plan.id)} 
+              onFavorite={handleFavorites}
+              
+            />
+          ))}
+      </div>
+      <div className="fav-list">
+        <h2>Favorites</h2>
+        {favorites.map(fav => (
+          <div key={fav.id}>
+            <TravelPlanCard plan={fav} onDelete={() => handleDelete(fav.id)} />
+          </div>
+        ))} 
+      </div>
     </div>
 
     )

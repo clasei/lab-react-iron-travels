@@ -1,5 +1,5 @@
 
-function TravelPlanCard({ plan, onDelete }) {
+function TravelPlanCard({ plan, onDelete, onFavorite }) {
 
   const { id, destination, days, description, totalCost, image, allInclusive } = plan
 
@@ -27,6 +27,10 @@ function TravelPlanCard({ plan, onDelete }) {
               </div>
               <div className="delete-container"> 
                 <button className="delete-button" onClick={onDelete}>Delete</button>
+              </div>
+
+              <div className="fav-container"> 
+                <button onClick={() => onFavorite(plan)} className="favorite-btn">♡</button>
               </div>
           </div>
 
