@@ -5,7 +5,6 @@ import TravelPlanCard from "./TravelPlanCard";
 function TravelList() {
 
   const [ travelPlans, setTravelPlans ] = useState(travelPlansData)
-  // setTravelPlans not used, though useState is added following the exercise requirements
 
   const handleDelete = (id) => {
     const updatedTravelPlans = travelPlans.filter(plan => plan.id !== id)
