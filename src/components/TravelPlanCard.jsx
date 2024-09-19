@@ -15,9 +15,7 @@ function TravelPlanCard({ plan, onDelete }) {
               <h3>{destination} ({days} Days)</h3>
               <p>{description}</p>
               <p>
-                  <>
                     Price: €{totalCost}
-                  </>
               </p>
             
               <div className="tag-container">
