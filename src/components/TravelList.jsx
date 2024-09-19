@@ -6,6 +6,11 @@ function TravelList() {
   const [ travelPlans, setTravelPlans ] = useState(travelPlansData)
   // setTravelPlans not used, though useState is added following the exercise requirements
 
+  const handleDelete = (id) => {
+    const updatedTravelPlans = travelPlans.filter(plan => plan.id !== id)
+    setTravelPlans(updatedTravelPlans)
+  }
+
   return (
     <div className="travel-list">
 
@@ -15,14 +20,15 @@ function TravelList() {
           <>
             <img src={eachTravel.image} style={{ width: '300px', height: 'auto' }} />
           </>
+
           <div className="travel-info">
-            <h3>{eachTravel.destination} ({eachTravel.days} Days)</h3>
-            <p>{eachTravel.description}</p>
-            <p>
-              <>
-                Price: €{eachTravel.totalCost}
-              </>
-            </p>
+              <h3>{eachTravel.destination} ({eachTravel.days} Days)</h3>
+              <p>{eachTravel.description}</p>
+              <p>
+                  <>
+                    Price: €{eachTravel.totalCost}
+                  </>
+              </p>
             
               <div className="tag-container">
                 
@@ -31,7 +37,9 @@ function TravelList() {
                   {eachTravel.allInclusive && <span className="tag all-inclusive">All-Inclusive</span>}
                 
               </div>
-            
+              <div className="delete-container"> 
+                <button className="delete-button" onClick={() => handleDelete(eachTravel.id)}>Delete</button>
+              </div>
           </div>
 
         </div>
